@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Configuration Property snippet</Title>
+      <Shortcut>confp</Shortcut>
+      <Description>
+        Code snippet for an automatically implemented configuration property, useful when creating configuration sections.
+      </Description>
+      <Author>Johan Suleiko Allansson</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+          <Assembly>System.Configuration</Assembly>
+        </Reference>
+      </References>
+      
+      <Imports>
+        <Import>
+          <Namespace>System.Configuration</Namespace>
+        </Import>
+      </Imports>
+      
+      <Declarations>
+        <Literal>
+          <ID>type</ID>
+          <ToolTip>Property type</ToolTip>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>property</ID>
+          <ToolTip>Property name</ToolTip>
+          <Default>MyProperty</Default>
+        </Literal>
+        <Literal>
+          <ID>xmlname</ID>
+          <ToolTip>Name of XML-element in configuration.</ToolTip>
+          <Default>myProperty</Default>
+        </Literal>
+      </Declarations>
+      
+      <Code Language="csharp">
+        <![CDATA[private const $type$ $property$XmlElementName = "$xmlname$";
+        
+        [ConfigurationProperty($property$XmlElementName)]
+        public $type$ $property$ 
+        {
+          get 
+          {
+            return ($type$)base[$property$XmlElementName];
+          }
+          set 
+          {
+            base[$property$XmlElementName] = value;
+          }
+        }$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
