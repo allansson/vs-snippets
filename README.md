@@ -2,6 +2,10 @@
 
 This repository contains a collection of some of my most frequently used Visual Studio-snippets.
 
+# Installation
+
+Download (or clone) the snippets into `%USERPROFILE%\Visual Studio 2013\Code Snippets\Visual C#\My Code Snippets`. For older versions of Visual Studio, just change the version number in the path to the version desired.
+
 # Snippets
 
 ## confp
